@@ -1,0 +1,90 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    text-decoration: none;
+    color: #222;
+    line-height: 1.5;
+    letter-spacing: -0.5px;
+    list-style: none;
+}
+.text-slide {
+    padding: 40px 0;
+    background-color: black;
+    display: flex;
+    overflow: hidden;
+}
+@keyframes textslide-ani {
+    0% {
+        transform: translateX(0);
+    }
+
+    100% {
+        transform: translateX(-100%);
+    }
+}
+.text-slide .box {
+    font-size: 20px;
+    font-weight: 700;
+    color: #fff;
+    white-space: nowrap;
+    animation: textslide-ani 15s infinite linear;
+}
+.container {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    height: 100vh;
+    background-color: #f0e1e1;
+    position: relative;
+}
+.circle {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    border-radius: 50%;
+    width: 100px;
+    height: 100px;
+    background-color: blueviolet;
+    opacity: 0.2;
+    animation: circle-ani 3s;
+}
+.square {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    width: 50px;
+    height: 50px;
+    background-color: palevioletred;
+    opacity: 0.4;
+    animation: square-ani 2s;
+    animation-timing-function: cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+@keyframes square-ani {
+    0% {
+        top: 40%;
+        left: 40%;
+    }
+    50% {
+        top: 60%;
+        left: -100%;
+    }
+    100% {
+        top: 40%;
+        left: 40%;
+    }
+}
+@keyframes circle-ani {
+    0% {
+        top: 50%;
+        left: -50%;
+    }
+    50% {
+        top: 60%;
+        left: 60%;
+    }
+    100% {
+        top: 50%;
+        left: 50%;
+    }
+}

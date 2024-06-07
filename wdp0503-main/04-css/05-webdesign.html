@@ -18,7 +18,7 @@
     </head>
     <body>
         <!-- 가로 1200px, 가운데 정렬 -->
-        <div class="wrap">
+        <div id="wrap" class="wrap">
             <!-- header -->
             <header>
                 <h1 id="logo">
@@ -28,9 +28,9 @@
                     <!-- <button class="btn-menu"><i class="las la-bars"></i> <span>전체메뉴 보기</span></button> -->
                     <input type="checkbox" name="btnMenu" id="btnMenu" class="btn-menu" />
                     <label for="btnMenu" class="label-menu"> <span>전체메뉴 보기</span></label>
-                    <ul class="depth1">
+                    <ul class="depth1 navbar">
                         <li class="active">
-                            <a href="#">메뉴1</a>
+                            <a href="#business">business</a>
                             <ul class="depth2">
                                 <li><a href="#">서브메뉴1</a></li>
                                 <li><a href="#">서브메뉴2</a></li>
@@ -40,28 +40,28 @@
                             </ul>
                         </li>
                         <li>
-                            <a href="#">메뉴2</a>
+                            <a href="#news">news</a>
                             <ul class="depth2">
                                 <li><a href="#">서브메뉴1</a></li>
                                 <li><a href="#">서브메뉴2</a></li>
                             </ul>
                         </li>
                         <li>
-                            <a href="#">메뉴3</a>
+                            <a href="#bbs">bbs</a>
                             <ul class="depth2">
                                 <li><a href="#">서브메뉴1</a></li>
                                 <li><a href="#">서브메뉴2</a></li>
                                 <li><a href="#">서브메뉴3</a></li>
                             </ul>
                         </li>
-                        <li>
+                        <!-- <li>
                             <a href="#">메뉴4</a>
                             <ul class="depth2">
                                 <li><a href="#">서브메뉴1</a></li>
                                 <li><a href="#">서브메뉴2</a></li>
                                 <li><a href="#">서브메뉴3</a></li>
                             </ul>
-                        </li>
+                        </li> -->
                     </ul>
                 </nav>
             </header>
@@ -129,7 +129,7 @@
             <script></script>
             <!-- content -->
             <main>
-                <section class="sec-g sec-business">
+                <section id="business" class="sec-g sec-business">
                     <h2 class="sec-tit"><span>웰컴복지재단</span>의 복지사업</h2>
                     <div class="sec-cont">
                         <div class="col-left">
@@ -156,7 +156,7 @@
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. <br />
                     Quibusdam, doloremque!
                 </div>
-                <section class="sec-g sec-news">
+                <section id="news" class="sec-g sec-news">
                     <h2 class="sec-tit"><span>웰컴</span>뉴스</h2>
                     <div class="sec-cont">
                         <ul class="list-news">
@@ -221,7 +221,7 @@
                         <a href="#" class="btn-g btn-arrow btn-more">더보기</a>
                     </div>
                 </section>
-                <section class="sec-g sec-bbs bg-grey">
+                <section id="bbs" class="sec-g sec-bbs bg-grey">
                     <h2 class="sec-tit"><span>공지</span>사항</h2>
                     <div class="sec-cont"></div>
                 </section>
@@ -230,7 +230,9 @@
             <footer>
                 <div>로고</div>
                 <div class="copyright">copyright</div>
-                <div>sns</div>
+                <div>
+                    <a href="#wrap">Top</a>
+                </div>
             </footer>
         </div>
         <!-- layer -->

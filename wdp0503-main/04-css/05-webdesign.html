@@ -10,8 +10,10 @@
         />
         <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
         <link rel="stylesheet" href="./css/style_web.css" />
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.1/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
         <script defer src="./js/script.js"></script>
+        <script defer src="./js/comm.js"></script>
         <!-- defer 하단의 html 코드를 먼저 읽고 스크립트 적용 -->
     </head>
     <body>
@@ -19,7 +21,7 @@
         <div class="wrap">
             <!-- header -->
             <header>
-                <h1>
+                <h1 id="logo">
                     <a href="#">logo <span>sub logo</span></a>
                 </h1>
                 <nav id="gnb">
@@ -243,7 +245,7 @@
                     elit. Cumque, sequi quas temporibus doloremque rerum voluptate possimus similique porro debitis quo
                     rem esse, quod sunt. Illum a dolorem quia molestias autem.
                 </p>
-                <button>닫기</button>
+                <button class="btn-close">닫기</button>
             </div>
         </div>
     </body>

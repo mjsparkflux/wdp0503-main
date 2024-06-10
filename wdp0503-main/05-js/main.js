@@ -48,3 +48,21 @@ if (aa === 1) {
 } else {
     console.log(`a는 ${aa}입니다.`)
 }
+
+//slide
+let cur = 0
+const listSlide = document.querySelector('.slide ul')
+const slideCount = document.querySelectorAll('.slide ul li').length
+
+console.log(slideCount)
+
+//every 3s slide
+setInterval(function () {
+    slide()
+}, 3000)
+
+function slide() {
+    cur = (cur + 1) % slideCount
+    listSlide.style.left = cur * -100 + '%'
+    console.log(cur)
+}

@@ -1,0 +1,63 @@
+.parallax {
+    position: relative;
+    overflow-x: hidden;
+    background-color: steelblue;
+    height: 100vh;
+    perspective: 1px;
+
+    div {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        font-size: 50px;
+        color: #fff;
+    }
+    .item1 {
+        height: 150rem;
+        background: #333;
+    }
+    .item2 {
+        top: 800px;
+        height: 500px;
+        background: lightgreen;
+        transform: translateZ(-2px);
+    }
+    .item3 {
+        top: 900px;
+        height: 500px;
+        background: yellow;
+        opacity: 0.5;
+        transform: translateZ(-1px);
+    }
+}
+
+.container {
+    position: relative;
+    height: 150px;
+    width: 150px;
+    margin: 60px;
+    border: 1px solid blue;
+}
+
+.perspective300 {
+    perspective: 300px;
+}
+
+.perspective100 {
+    perspective: 100px;
+    perspective-origin: 50% 50%;
+}
+
+.perspective50 {
+    perspective: 50px;
+}
+
+.item {
+    position: absolute;
+    padding: 50px;
+    border: 1px solid black;
+    background: rgba(100, 100, 100, 0.5);
+    transform-style: preserve-3d;
+    transform: rotateX(45deg);
+}

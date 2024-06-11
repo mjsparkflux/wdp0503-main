@@ -55,4 +55,15 @@ $(function () {
             )
         } // End if
     })
+    //AOS를 이용한 parallax scrolling
+    AOS.init({
+        // key: value,
+        offset: 120,
+        delay: 0,
+        duration: 1000,
+        easing: 'ease-in-out',
+        mirror: false,
+        once: false,
+        anchorPlacement: 'top-center',
+    })
 })

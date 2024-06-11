@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>AOS</title>
+        <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
+        <style>
+            .extra {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                height: 100vh;
+                background: #f0f0f0;
+                font-size: 3rem;
+            }
+            .extra span {
+            }
+            .aos div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 100vh;
+                width: 300px;
+                height: 300px;
+                margin: 50px auto;
+                background: lightcoral;
+                color: #fff;
+                font-size: 2rem;
+            }
+            .aos .item1 {
+                opacity: 0;
+            }
+            .item1.aos-animate {
+                background-color: burlywood;
+                /* transform: scale(1.3) rotate(360deg); */
+                transform: scale(6);
+                opacity: 1;
+            }
+            .aos .item5 {
+                position: fixed;
+                top: 50%;
+                left: 50%;
+                margin-top: -150px;
+                margin-left: -150px;
+                background: lightseagreen;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="extra"><span data-aos="fade-up">AOS</span></div>
+        <div class="aos">
+            <div class="item1" data-aos="ani1">item1</div>
+            <div class="item2">item2</div>
+            <div class="item3">item3</div>
+            <div class="item4">item4</div>
+            <div class="item5" data-aos="fade-right" data-aos-anchor=".item4">item5</div>
+        </div>
+        <div class="extra"><span>AOS</span></div>
+
+        <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+        <script>
+            AOS.init({
+                offset: 500, // offset (in px) from the original trigger point
+                delay: 0, // values from 0 to 3000, with step 50ms
+                duration: 1000, // values from 0 to 3000, with step 50ms
+                easing: 'ease', // default easing for AOS animations
+                once: false, // whether animation should happen only once - while scrolling down
+                mirror: false, // whether elements should animate out while scrolling past them
+                anchorPlacement: 'top-bottom', // defines which position of the element regarding to window should trigger the animation
+            })
+        </script>
+    </body>
+</html>

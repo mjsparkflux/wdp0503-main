@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>scroll-js</title>
+        <style>
+            .container {
+                height: 400vh;
+                background: url(https://images.unsplash.com/photo-1717733812723-543792d9e74e?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxlZGl0b3JpYWwtZmVlZHwxNzl8fHxlbnwwfHx8fHw%3D)
+                    no-repeat 0 0 / cover;
+                background-attachment: fixed;
+                z-index: 1;
+                position: relative;
+                overflow: hidden;
+            }
+            .item {
+                width: 300px;
+                height: 300px;
+                background: lightskyblue;
+                transform-origin: 0 0;
+            }
+            .item2 {
+                position: absolute;
+                top: 200px;
+                left: -100px;
+                width: auto;
+                background: blueviolet;
+                transform: translateX(-100%);
+            }
+            .item3 {
+                background: lightgreen;
+            }
+            .box {
+                display: flex;
+                list-style: none;
+            }
+            .box li {
+                width: 200px;
+                height: 200px;
+                background: chocolate;
+                margin: 20px;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item item1">item1</div>
+            <div class="item item2">
+                <ul class="box">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="item item3">item3</div>
+        </div>
+        <div class="container">
+            <div class="item item1">item1</div>
+            <div class="item item2">
+                <ul class="box">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="item item3">item3</div>
+        </div>
+        <div class="container">
+            <div class="item item1">item1</div>
+            <div class="item item2">
+                <ul class="box">
+                    <li></li>
+                    <li></li>
+                    <li></li>
+                </ul>
+            </div>
+            <div class="item item3">item3</div>
+        </div>
+        <script>
+            const item = document.querySelector('.item')
+
+            item.style.backgroundColor = 'blue'
+            item.style.fontSize = '20px'
+            item.style.transform = 'translaste(100px, 100px) rotate(45deg) scale(1.5)'
+
+            window.addEventListener('scroll', function () {
+                const sections = document.querySelectorAll('.container')
+
+                sections.forEach(function (section) {
+                    const item1 = section.querySelector('.item1')
+                    const item2 = section.querySelector('.item2')
+
+                    const scrolled = window.scrollY
+                    console.log(`스크롤값: ${scrolled}`)
+                    console.log(`스크롤값: + ${scrolled * 0.5}`)
+
+                    item1.style.transform = `scale(${scrolled * 0.01})`
+                    item2.style.transform = `translate(${scrolled}px, ${scrolled}px)`
+                })
+            })
+            const items = ['item1', 'item2', 'item3']
+
+            items.forEach(function (a) {
+                console.log(a)
+            })
+        </script>
+    </body>
+</html>

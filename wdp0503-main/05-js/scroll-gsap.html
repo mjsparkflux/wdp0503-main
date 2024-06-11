@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Scroll gsap</title>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+        <style>
+            section {
+                height: 100vh;
+                border: 3px solid #000;
+            }
+            .box1 {
+                margin-top: 80px;
+                margin-left: 80px;
+                width: 200px;
+                height: 200px;
+                background: lightslategrey;
+            }
+            .box2 {
+                margin-top: 80px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: lightgreen;
+            }
+            .item1 {
+                margin-top: 80px;
+                width: 200px;
+                height: 200px;
+                background: lightpink;
+            }
+            .item2 {
+                margin-top: 80px;
+                width: 100px;
+                height: 200px;
+                background: lightsalmon;
+            }
+            .item3 {
+                margin-top: 80px;
+                width: 200px;
+                height: 200px;
+                border-radius: 50%;
+                background: lightseagreen;
+            }
+        </style>
+    </head>
+
+    <body>
+        <section class="sec1">
+            <div class="box1"></div>
+        </section>
+        <section class="sec2">
+            <div class="box2"></div>
+        </section>
+
+        <div class="container">
+            <div class="item1"></div>
+            <div class="item2"></div>
+            <div class="item3"></div>
+        </div>
+        <script>
+            gsap.registerPlugin(ScrollTrigger)
+            gsap.to('.box1', {
+                duration: 3,
+                x: 500,
+                y: 100,
+                scale: 2,
+                scrollTrigger: {
+                    trigger: '.sec1',
+                    start: '30% 20%',
+                    end: '100% 70%',
+                    scrub: 1,
+                    markers: true,
+                },
+            })
+            gsap.to('.box2', {
+                duration: 3,
+                x: 500,
+                y: 100,
+                scale: 2,
+                scrollTrigger: {
+                    trigger: '.sec2',
+                    start: '10% 10%',
+                    end: '100% 90%',
+                    scrub: 1,
+                    markers: true,
+                },
+            })
+
+            // container
+            const tl = gsap.timeline()
+            //    gsap.to(바꾸고자 하는 타겟, 변경하고자하는 옵션값)
+            tl.to('.item1', { rotation: 360, x: 1000, duration: 3 }, 0.5)
+                .from('.item2', { rotation: 360, x: 1000, duration: 3 }, '-=1')
+                //'-=1' 이전 애니메이션의 1초 전에 시작
+                .to('.item3', { scale: 2, rotation: 360, x: 500, duration: 3 }, '+=1')
+            //'+=1' 이전 애니메이션의 1초 후에 시작
+        </script>
+    </body>
+</html>
